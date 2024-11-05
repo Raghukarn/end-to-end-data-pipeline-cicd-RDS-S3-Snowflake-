@@ -19,7 +19,7 @@ This repository contains the code and documentation for an end-to-end data pipel
 # Part 1: Data Pipeline
 1. **Source Database**: MySQL database on a local machine connected to an AWS RDS instance.
 2. **Data Migration**:
-"\t" - Use **AWS DMS** to transfer data from MySQL to S3 in CSV format, with separate folders for each table.
+&nbsp; - Use **AWS DMS** to transfer data from MySQL to S3 in CSV format, with separate folders for each table.
 3. **Snowflake Integration**:
 - Create an **external integration** in Snowflake to connect to the S3 bucket and define an **external stage**.
 - Define a ```raw_layer``` schema in Snowflake and create tables using schema inference from the external stage.
