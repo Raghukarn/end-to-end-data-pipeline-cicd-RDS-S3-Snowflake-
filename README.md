@@ -7,7 +7,6 @@ This repository contains the code and documentation for an end-to-end data pipel
 - Loading data into Snowflake’s raw and stage layers with automated change data capture (CDC).
 - CI/CD for database objects to streamline production deployment.
 
-- 
 ## Architecture Diagram
 
 
@@ -15,12 +14,12 @@ This repository contains the code and documentation for an end-to-end data pipel
 - **Database**: MySQL (local), Snowflake
 - **Cloud Services**: AWS RDS, S3, AWS DMS, Snowflake
 - **CI/CD**: Azure Repos, SchemaChange (for database change management)
-- 
+ 
 ## Project Workflow
 # Part 1: Data Pipeline
 1. **Source Database**: MySQL database on a local machine connected to an AWS RDS instance.
 2. **Data Migration**:
-- Use **AWS DMS** to transfer data from MySQL to S3 in CSV format, with separate folders for each table.
+       - Use **AWS DMS** to transfer data from MySQL to S3 in CSV format, with separate folders for each table.
 3. **Snowflake Integration**:
 - Create an **external integration** in Snowflake to connect to the S3 bucket and define an **external stage**.
 - Define a ```raw_layer``` schema in Snowflake and create tables using schema inference from the external stage.
@@ -66,5 +65,5 @@ plaintext
 - **cicd/schemachange**: Configuration files and change scripts for SchemaChange.
 
 Acknowledgments
-SchemaChange Documentation - For database change management.
-Snowflake Documentation[For data warehousing and data processing.](https://docs.snowflake.com/)
+[SchemaChange Documentation](https://github.com/Snowflake-Labs/schemachange)
+[Snowflake Documentation](https://docs.snowflake.com/)
