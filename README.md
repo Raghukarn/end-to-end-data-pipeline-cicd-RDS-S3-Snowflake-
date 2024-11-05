@@ -67,4 +67,4 @@ plaintext
 
 Acknowledgments
 SchemaChange Documentation - For database change management.
-Snowflake Documentation - For data warehousing and data processing.
+Snowflake Documentation[For data warehousing and data processing.](https://docs.snowflake.com/)
