@@ -23,27 +23,30 @@ This repository contains the code and documentation for an end-to-end data pipel
 - Use **AWS DMS** to transfer data from MySQL to S3 in CSV format, with separate folders for each table.
 3. **Snowflake Integration**:
 - Create an **external integration** in Snowflake to connect to the S3 bucket and define an **external stage**.
-- Define a **raw_layer** schema in Snowflake and create tables using schema inference from the external stage.
+- Define a ```raw_layer``` schema in Snowflake and create tables using schema inference from the external stage.
 4. **Data Loading to Raw Layer**:
-- Create a stored procedure to convert all columns in **raw_layer** tables to **TEXT** data types to prevent data loss during the load.
-- Create **Snowpipe** jobs to load data from S3 to Snowflake tables in **raw_layer** using **SQS notification channels** in S3.
+- Create a stored procedure to convert all columns in ```raw_layer``` tables to ```TEXT``` data types to prevent data loss during the load.
+- Create **Snowpipe** jobs to load data from S3 to Snowflake tables in ```raw_layer``` using **SQS notification channels** in S3.
 5. **Data Transformation and CDC in Stage Layer**:
-- Create a **stage_layer** schema with the same tables but with accurate data types.
-- Set up **Snowflake streams** on **raw_layer** tables to capture CDC changes.
-- Develop stored procedures in the **stage_layer** schema to handle **INSERT, UPDATE, and DELETE** operations on CDC data using **MERGE statements**.
+- Create a ```stage_layer``` schema with the same tables but with accurate data types.
+- Set up **Snowflake streams** on ```raw_layer``` tables to capture CDC changes.
+- Develop stored procedures in the ```stage_layer``` schema to handle ```INSERT```, ```UPDATE```, and ```DELETE``` operations on CDC data using **MERGE statements**.
 - Schedule **Snowflake tasks** to ```call``` these stored procedures and automate data load and transformation.
-Part 2: CI/CD for Database Objects
-CI/CD Setup:
-Use SchemaChange, a lightweight Python tool, for database change management (DCM) in Snowflake.
-The tool follows an imperative-style approach to manage Snowflake objects, enabling automatic deployment of database objects in production.
-Pipeline Management:
-Use Azure Repos for version control and Azure Pipelines to automate deployment.
-Configure pipeline jobs to create or update database objects such as databases, schemas, tables, pipes, tasks, streams, and stored procedures.
-Project Structure
+
+
+## Part 2: CI/CD for Database Objects
+1. **CI/CD Setup**:
+- Use **SchemaChange**, a lightweight Python tool, for database change management (DCM) in Snowflake.
+- The tool follows an imperative-style approach to manage Snowflake objects, enabling automatic deployment of database objects in production.
+2. **Pipeline Management**:
+- Use **Azure Repos** for version control and **Azure Pipelines** to automate deployment.
+- Configure pipeline jobs to create or update database objects such as databases, schemas, tables, pipes, tasks, streams, and stored procedures.
+
+## Project Structure
 The following is an example of the project structure in this repository:
 
+```
 plaintext
-Copy code
 .
 ├── src
 │   ├── stored_procedures
@@ -57,24 +60,11 @@ Copy code
 │   │   ├── change_scripts
 │   │   └── config.yml
 └── README.md
-src/stored_procedures: Contains SQL scripts for stored procedures.
-src/tasks: SQL scripts for Snowflake tasks.
-cicd/schemachange: Configuration files and change scripts for SchemaChange.
-How to Run the Project
-Database Setup:
+```
+- **src/stored_procedures**: Contains SQL scripts for stored procedures.
+- **src/tasks**: SQL scripts for Snowflake tasks.
+- **cicd/schemachange**: Configuration files and change scripts for SchemaChange.
 
-Ensure MySQL and AWS RDS instance are properly configured.
-Set up AWS DMS to migrate data to S3 in the desired folder structure.
-Snowflake Setup:
-
-Create external integration and stage in Snowflake.
-Run the stored procedure to initialize tables in the raw layer with all columns as TEXT.
-Set up Snowpipes and Snowflake streams for CDC.
-CI/CD Setup:
-
-Clone this repository and set up Azure Repos for version control.
-Configure SchemaChange with connection details for Snowflake.
-Set up the Azure Pipeline for CI/CD deployment.
 Acknowledgments
 SchemaChange Documentation - For database change management.
 Snowflake Documentation - For data warehousing and data processing.
