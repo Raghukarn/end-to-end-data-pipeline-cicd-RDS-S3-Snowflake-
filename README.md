@@ -63,9 +63,9 @@ The following is an example of the project structure in this repository:
 - **src/tasks**: SQL scripts for Snowflake tasks.
 - **cicd/schemachange**: Configuration files and change scripts for SchemaChange.
 
-Acknowledgments
-[SchemaChange Documentation](https://github.com/Snowflake-Labs/schemachange) <br>
-[Snowflake Documentation](https://docs.snowflake.com/)
+Acknowledgments <br>
+- [SchemaChange Documentation](https://github.com/Snowflake-Labs/schemachange) <br>
+- [Snowflake Documentation](https://docs.snowflake.com/)
 
 ![dashboard](https://github.com/user-attachments/assets/386acc8c-e181-48b2-859c-c66f35fe1b49)
 
