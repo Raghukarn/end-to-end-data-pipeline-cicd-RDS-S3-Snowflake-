@@ -45,20 +45,19 @@ This repository contains the code and documentation for an end-to-end data pipel
 The following is an example of the project structure in this repository:
 
 ```
-plaintext
 .
-├── src
-│   ├── migration
-│   │   ├── V1.0_DB_objects.sql
-│   │   ├── V1.1__new_DB_objects.sql
-│   └── repeatation
-│       ├── V1.0__Snowpipes_objects.sql
-│       ├── V1.1_snow_task_objects.sql
-├── cicd
-│   ├── schemachange
-│   │   ├── change_scripts
-│   │   └── azure-pipelines.yml
-└── README.md
+├── Snowflake-DevOps-CICD
+│   ├── Repeatation
+│   │   ├── V1.0__snowpipe_objects.sql       # SQL script for Snowpipe objects
+│   │   ├── V1.1__stage_objects.sql          # SQL script for stage objects
+│   │   └── V1.2__snowtask_objects.sql       # SQL script for Snowflake tasks
+│   ├── migrations
+│   │   ├── V1.0__create_objects.sql         # Initial database objects creation
+│   │   ├── V1.1__update_objects.sql         # Update existing database objects
+│   │   └── V1.2__new_DB_objects.sql         # Add new database objects
+│   ├── azure-pipelines.yml                  # CI/CD pipeline configuration file
+│   └── README.md                            # Project documentation
+
 ```
 - **src/stored_procedures**: Contains SQL scripts for stored procedures.
 - **src/tasks**: SQL scripts for Snowflake tasks.
