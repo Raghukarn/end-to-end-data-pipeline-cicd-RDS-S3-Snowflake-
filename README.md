@@ -66,3 +66,6 @@ The following is an example of the project structure in this repository:
 Acknowledgments
 [SchemaChange Documentation](https://github.com/Snowflake-Labs/schemachange) <br>
 [Snowflake Documentation](https://docs.snowflake.com/)
+
+![dashboard](https://github.com/user-attachments/assets/386acc8c-e181-48b2-859c-c66f35fe1b49)
+
