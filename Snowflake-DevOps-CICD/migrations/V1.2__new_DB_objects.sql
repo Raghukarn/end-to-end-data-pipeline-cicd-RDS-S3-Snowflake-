@@ -7,13 +7,13 @@ CREATE OR REPLACE SCHEMA SF_RetailSales1.raw_layer1;
 -- CREATE OR REPLACE STORAGE INTEGRATION s3_int1
 --   TYPE = EXTERNAL_STAGE
 --   STORAGE_PROVIDER = 'S3'
---   STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::211125616305:role/rds_s3_snowflake_role'
+--   STORAGE_AWS_ROLE_ARN = '<YOUR_ARN>'
 --   ENABLED = TRUE
---   STORAGE_ALLOWED_LOCATIONS = ('s3://raghu-dms-target/dms/RetailSales/');
+--   STORAGE_ALLOWED_LOCATIONS = ('s3://Folder_1dms/Folder_2/');
 
 --   ---> create the EXTERNAL STAGE using s3_int storage itegration for s3
 CREATE OR REPLACE STAGE my_external_stage
-  URL = 's3://raghu-dms-target/dms/RetailSales/'
+  URL = ''s3://Folder_1dms/Folder_2/''
   STORAGE_INTEGRATION = s3_int;
 
   -- Create a file format that sets the file type as CSV.
