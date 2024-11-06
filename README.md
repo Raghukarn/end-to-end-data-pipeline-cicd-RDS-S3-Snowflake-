@@ -8,6 +8,7 @@ This repository contains the code and documentation for an end-to-end data pipel
 - CI/CD for database objects to streamline production deployment.
 
 ## Architecture Diagram
+![Architecture drawio](https://github.com/user-attachments/assets/bf2433b0-7612-4b0f-97a0-065db61c3140)
 
 
 ## Tech Stack
